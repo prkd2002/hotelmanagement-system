@@ -1,5 +1,6 @@
 package com.prkd.HotelServer.entity;
 
+import com.prkd.HotelServer.dto.UserDto;
 import com.prkd.HotelServer.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -55,5 +56,14 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public UserDto getUSerDto(){
+        UserDto dto = new UserDto();
+        dto.setId(this.id);
+        dto.setEmail(this.email);
+        dto.setName(this.name);
+        dto.setRole(this.userRole);
+        return dto;
     }
 }
