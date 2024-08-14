@@ -24,6 +24,7 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
     private String name;
+
     private UserRole userRole;
 
     @Override
